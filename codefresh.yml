@@ -1,14 +1,10 @@
 version: '1.0'
-stages:
-  - prepare
-  - build
 steps:
   main_clone:
     title: Cloning main repository...
     type: git-clone
     repo: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
     revision: '${{CF_REVISION}}'
-    stage: prepare
     git: CF-default
   build:
     type: build
